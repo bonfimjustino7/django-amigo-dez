@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%}Gerar Amigo Secreto{% endblock %}
+
+{% block content %}
+  <form method="post" novalidate>    
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Gerar Amigo Secreto</button>
+  </form>
+{% endblock %}
