@@ -4,8 +4,17 @@
 {% block title%}Gerar Amigo Secreto{% endblock %}
 
 {% block content %}
-  <form method="post" novalidate>    
+  
+  <form method="post">    
     {% csrf_token %}
-    <button type="submit" class="btn btn-success">Gerar Amigo Secreto</button>
-  </form>
+    <div class="col-md text-center">
+        <button type="submit" class="btn btn-primary">Gerar Amigo Secreto</button>
+    </div> 
+  </form> 
+  {% if amigo %}
+    <div class="info col-md text-center">
+      <h1 class="slogan mt-4">Uau!</h1>
+      <h2>Você sorteou o(a) {{ amigo|title }} como seu amigo(a) secreto(a).</h2>
+    </div>
+  {% endif %}
 {% endblock %}
